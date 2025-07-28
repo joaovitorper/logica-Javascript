@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Dólar</title>
+  <script src="conversor.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #40e0d0; /* Turquesa */
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 320px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1.5px solid black;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: 1.5px solid black;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #resultado {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #006600;
+      min-height: 24px;
+    }
+
+    #atualizarBtn {
+      background-color: #ffaa00;
+    }
+
+    #atualizarBtn:hover {
+      background-color: #cc8800;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Conversor de Dólar para Real</h1>
+
+    <button id="atualizarBtn" onclick="atualizarCotacao()">Atualizar Cotação da Semana</button>
+
+    <label for="cotacao">Cotação do Dólar (R$):</label>
+    <input type="number" id="cotacao" step="0.01" placeholder="Ex: 5.56" />
+
+    <label for="valorDolar">Valor em Dólares (US$):</label>
+    <input type="number" id="valorDolar" step="0.01" placeholder="Ex: 100" />
+
+    <button onclick="converter()">Converter</button>
+
+    <p id="resultado"></p>
+  </div>
+</body>
+</html>
