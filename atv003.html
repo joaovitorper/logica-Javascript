@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Conversor de Dólar</title>
-  <script src="conversor.js" defer></script>
   <style>
     body {
       margin: 0;
@@ -90,5 +89,28 @@
 
     <p id="resultado"></p>
   </div>
+
+  <script>
+    function converter() {
+      const cotacao = parseFloat(document.getElementById("cotacao").value);
+      const valorDolar = parseFloat(document.getElementById("valorDolar").value);
+
+      if (isNaN(cotacao) || isNaN(valorDolar)) {
+        alert("Preencha os dois campos corretamente!");
+        return;
+      }
+
+      const valorReal = cotacao * valorDolar;
+      document.getElementById("resultado").textContent =
+        `Valor em Reais: R$ ${valorReal.toFixed(2)}`;
+    }
+
+    function atualizarCotacao() {
+      const cotacaoAtual = 5.42; // Altere aqui toda semana se quiser
+      document.getElementById("cotacao").value = cotacaoAtual;
+      alert(`Cotação da semana atualizada: R$ ${cotacaoAtual.toFixed(2)}`);
+    }
+  </script>
 </body>
 </html>
+
